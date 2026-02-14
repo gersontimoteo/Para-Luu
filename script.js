@@ -32,7 +32,7 @@ Con muchísimo amor y cariño.
 Gerson`
 ];
 
-// Promesa final (centrada + animación)
+// Promesa final
 const promesaTexto = `Y antes de terminar la carta quiero prometerte algo…
 No te prometo un amor perfecto, porque no soy perfecto, pero si prometo que daré mi alma para hacer que esto funcione.
 Te prometo elegirte incluso cuando esté enojado, incluso cuando mi orgullo quiera ganar una discusión.
@@ -121,17 +121,17 @@ function mostrarPromesa() {
   i = 999;
 }
 
-// ====== CLICK ======
+// ====== CLICK CARTA ======
 btn.addEventListener("click", () => {
   if (escribiendo) return;
 
-  if (i === -1) { // portada -> parte 1
+  if (i === -1) {
     i = 0;
     mostrarParte();
     return;
   }
 
-  if (i === 999) { // fin -> portada
+  if (i === 999) {
     mostrarPortada();
     return;
   }
@@ -148,18 +148,29 @@ btn.addEventListener("click", () => {
 mostrarPortada();
 
 
-// ====== MÚSICA ======
+// ====== MÚSICA + BOTÓN ======
 const music = document.getElementById("music");
 const musicBtn = document.getElementById("musicBtn");
+
+let musicaActiva = false; // ✅ controla el “modo latido”
+let heartSpeedMultiplier = 1; // ✅ velocidad de subida
 
 musicBtn.addEventListener("click", async () => {
   try {
     if (music.paused) {
       await music.play();
       musicBtn.textContent = "⏸ Pausar";
+      musicBtn.classList.add("music-active");
+
+      musicaActiva = true;
+      heartSpeedMultiplier = 2.2; // ✅ suben más rápido con música
     } else {
       music.pause();
-      musicBtn.textContent = "🎵 Nuestra canción";
+      musicBtn.textContent = "Música para romantizar jeje 🎵";
+      musicBtn.classList.remove("music-active");
+
+      musicaActiva = false;
+      heartSpeedMultiplier = 1;
     }
   } catch (e) {
     alert("No se pudo reproducir la música. Revisá que el archivo se llame EXACTO: cancion.mp3 y esté en la misma carpeta.");
@@ -167,7 +178,7 @@ musicBtn.addEventListener("click", async () => {
 });
 
 
-// ====== CORAZONES ======
+// ====== CORAZONES (suben + laten con música) ======
 const canvas = document.getElementById("hearts");
 const ctx = canvas.getContext("2d");
 
@@ -184,10 +195,14 @@ function crearCorazon() {
   hearts.push({
     x: Math.random() * canvas.width,
     y: canvas.height + 20,
-    size: Math.random() * 16 + 8,
-    speed: Math.random() * 1.2 + 0.6,
+    baseSize: Math.random() * 16 + 8,        // tamaño base
+    speed: (Math.random() * 1.2 + 0.6),
     drift: (Math.random() - 0.5) * 0.6,
-    alpha: Math.random() * 0.35 + 0.35
+    alpha: Math.random() * 0.35 + 0.35,
+
+    // para “latido”
+    beatPhase: Math.random() * Math.PI * 2,  // fase distinta por corazon
+    beatSpeed: Math.random() * 0.08 + 0.06   // velocidad de latido
   });
 }
 
@@ -212,10 +227,22 @@ function animar() {
 
   for (let j = hearts.length - 1; j >= 0; j--) {
     const h = hearts[j];
-    h.y -= h.speed;
+
+    // Subida
+    h.y -= h.speed * heartSpeedMultiplier;
     h.x += h.drift;
-    drawHeart(h.x, h.y, h.size, h.alpha);
-    if (h.y < -40) hearts.splice(j, 1);
+
+    // ✅ Latido: solo si hay música
+    let size = h.baseSize;
+    if (musicaActiva) {
+      h.beatPhase += h.beatSpeed;
+      const beat = 1 + 0.12 * Math.sin(h.beatPhase); // 12% de “latido”
+      size = h.baseSize * beat;
+    }
+
+    drawHeart(h.x, h.y, size, h.alpha);
+
+    if (h.y < -60) hearts.splice(j, 1);
   }
 
   requestAnimationFrame(animar);
