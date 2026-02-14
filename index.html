@@ -99,12 +99,14 @@
       text-align:center;
       padding: 10px 6px;
     }
+
     .finalBox{
       max-width: 640px;
       font-size: 18px;
       line-height: 1.6;
       animation: fadeInUp 900ms ease both, heartbeat 2200ms ease-in-out 900ms infinite;
     }
+
     .finalTitle{
       font-weight: 900;
       font-size: 22px;
@@ -115,6 +117,7 @@
       from{ opacity: 0; transform: translateY(10px); }
       to{ opacity: 1; transform: translateY(0); }
     }
+
     @keyframes heartbeat{
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.015); }
@@ -135,11 +138,11 @@
       transition: transform 0.2s ease;
     }
 
-    /* ✅ Latido + brillo del botón cuando suena música */
     .music-active{
       animation: pulse 1.5s infinite;
       box-shadow: 0 0 18px rgba(255, 0, 100, 0.6);
     }
+
     @keyframes pulse{
       0% { transform: scale(1); }
       50% { transform: scale(1.07); }
@@ -149,6 +152,7 @@
 </head>
 
 <body>
+
   <canvas id="hearts"></canvas>
 
   <div class="card">
@@ -164,11 +168,14 @@
   </div>
 
   <audio id="music" preload="auto">
-    <source src="./cancion.mp3" type="audio/mpeg">
+    <!-- También le agregamos versión a la canción -->
+    <source src="./cancion.mp3?v=2026" type="audio/mpeg">
   </audio>
 
   <button id="musicBtn">Música para romantizar jeje 🎵</button>
 
-  <script src="script.js"></script>
+  <!-- 👇 ESTA ES LA LÍNEA IMPORTANTE -->
+  <script src="script.js?v=2026"></script>
+
 </body>
 </html>
