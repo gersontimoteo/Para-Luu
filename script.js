@@ -5,44 +5,27 @@ const titulo = "Para vos mi niña hermosa ❤️";
 const partes = [
 `Hola mi amor
 
-No sabía cómo hacerte un detallito lindo a la distancia,
-así que decidí armarte esta mini carta`,
+No sabía cómo hacerte un detallito lindo a la distancia, así que decidí armarte esta mini carta`,
 
-`Hace unos meses éramos 2 desconocidos, no estaba buscando a nadie 
-pero llegaste vos, y mi mundo entero cambio para bien, comenzamos hablar 
-y créeme que nunca había disfrutado tanto hablar con alguien 
-como con vos, siempre me preguntaste que me enamoro de vos,
-todo, absolutamente todo me gusto en vos.`,
+`Hace unos meses éramos 2 desconocidos, no estaba buscando a nadie pero llegaste vos, y mi mundo entero cambio para bien, comenzamos hablar y créeme que nunca había disfrutado tanto hablar con alguien como con vos, siempre me preguntaste que me enamoro de vos, todo, absolutamente todo me gusto en vos.`,
 
 `Hoy sos la persona que mas feliz me hace en este mundo, de verdad te amo con el alma entera,
 y cada día me gustas mas, me encanta hablar con vos, me encanta pasar tiempo con vos, 
-me encanta que seas vos misma, me encanta todo en vos, sos todo que siempre soñé, 
-y quisiera pasar el resto de mi vida junto a vos`,
+me encanta que seas vos misma, me encanta todo en vos, sos todo que siempre soñé, y quisiera pasar el resto de mi vida junto a vos`,
 
-`Amo todo de vos, amo tus gestos, amo tu risa, amo tu forma de hablar,
-amo tu forma de ser, amo la forma en que me amas, amo tus mejillas, 
-amo tu cabello, amo tu nariz, amo tus ojos, amo tus labios, amo tu sonrisa, amo tu voz,
-amo tu rostro, amo tus mensajes, amo tus enojos, amo tu amor, amo la idea de un mañana con vos, y te amaría de cualquier forma  y en cualquier mundo, si la vida me diera a elegir, te volvería a elegir una y mil veces mas.`,
+`Amo todo de vos, amo tus gestos, amo tu risa, amo tu forma de hablar, amo tu forma de ser, amo la forma en que me amas, amo tus mejillas, 
+amo tu cabello, amo tu nariz, amo tus ojos, amo tus labios, amo tu sonrisa, amo tu voz, amo tu rostro, amo tus mensajes, amo tus enojos, amo tu amor, amo la idea de un mañana con vos, y te amaría de cualquier forma  y en cualquier mundo, y si la vida me diera a elegir, te volvería a elegir una y mil veces mas.`,
 
-`Te elijo con los ojos abiertos, sabiendo que amar no siempre es fácil, te elijo es tus luces, 
-te elijo en tus sombras, en tus días de calma y en tus días de caos, te elijo no porque te necesite, si no porque la vida contigo se siente mas bonita, y es hermoso imaginarme el mañana e imaginarte en cada uno de mis días.`,
+`Te elijo con los ojos abiertos, sabiendo que amar no siempre es fácil, te elijo es tus luces, te elijo en tus sombras, en tus días de calma y en tus días de caos, te elijo no porque te necesite, si no porque la vida contigo se siente mas bonita, y es hermoso imaginarme el mañana e imaginarte en cada uno de mis días.`,
 
-`Te amo con el corazon abierto, y eso me asusta porque significa que puedes 
-tocar cada fibra de mi, a veces sonrió porque siento que estoy viviendo un sueño,
-el sueño mas hermoso que  pude tener, no quiero huir solo quiero aprender a sentirme seguro 
-mientras te amo y si alguna vez me notas frágil no es falta de amor es el miedo 
-de perder algo que por fin siento mío.`,
+`Te amo con el corazon abierto, y eso me asusta porque significa que puedes tocar cada fibra de mi, a veces sonrió porque siento que estoy viviendo un sueño, el sueño mas hermoso que  pude tener, no quiero huir solo quiero aprender a sentirme seguro mientras te amo y si alguna vez me notas frágil no es falta de amor es el miedo de perder algo que por fin siento mío.`,
 
 `Ojala nunca dudes de cuanto te amo, porque desde que te conocí me hiciste ser el hombre 
-mas feliz del mundo, no cambiaria nada de vos nunca, pero cambiaria todo de mi para ser 
-el hombre de tu vida, me encantas y es algo que nunca va cambiar, en esta y todas las vidas siempre vas a ser el amor de mi vida `,
+mas feliz del mundo, no cambiaria nada de vos nunca, pero cambiaria todo de mi para ser el hombre de tu vida, me encantas y es algo que nunca va cambiar, en esta y todas las vidas siempre vas a ser el amor de mi vida `,
 
-`Llegaste a mi vida sin avisar, y te volviste la mujer con la que quiero pasar el resto 
-de mi vida, amo sentir todo esto por vos, siento paz cuando estas vos, 
-te amo en todas tus formas, amo quien sos y quien haces que sea yo.`,
+`Llegaste a mi vida sin avisar, y te volviste la mujer con la que quiero pasar el resto de mi vida, amo sentir todo esto por vos, siento paz cuando estas vos, te amo en todas tus formas, amo quien sos y quien haces que sea yo.`,
 
-`Gracias por siempre estar, gracias por creer en mi, gracias por hacerme tan feliz,
-gracias por alegrar mis días y mi noches, gracias por amarme, pero sobre todo, gracias por elegirme a mi. 
+`Gracias por siempre estar, gracias por creer en mi, gracias por hacerme tan feliz, gracias por alegrar mis días y mi noches, gracias por amarme, pero sobre todo, gracias por elegirme a mi. 
 
 Con muchísimo amor y cariño.
 
