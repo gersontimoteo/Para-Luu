@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Para Lu ❤️</title>
+
+  <style>
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      padding: 24px;
+      overflow-y: auto; /* ✅ permite scroll si hiciera falta */
+    }
+
+    /* Canvas corazones */
+    #hearts{
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .card{
+      width:min(760px, 100%);
+      background: rgba(255,255,255,0.90);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 14px 45px rgba(0,0,0,0.15);
+      backdrop-filter: blur(8px);
+      position: relative;
+      z-index: 2;
+
+      /* ✅ clave para que no se salga de la pantalla */
+      max-height: 90vh;
+
+      /* ✅ estructura para que el footer quede fijo abajo */
+      display: flex;
+      flex-direction: column;
+
+      /* ✅ evita que el contenido salga */
+      overflow: hidden;
+    }
+
+    h1{ margin:0 0 10px; }
+    .sub{ opacity:.8; margin:0 0 12px; }
+
+    /* ✅ el contenido scrollea acá */
+    .letter{
+      white-space: pre-wrap;
+      line-height: 1.55;
+      font-size: 18px;
+      margin: 12px 0 14px;
+      flex: 1;                 /* ocupa el espacio disponible */
+      overflow-y: auto;        /* scroll interno */
+      padding-right: 6px;      /* para que no choque con scrollbar */
+    }
+
+    button{
+      border:0;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background:#ff4d6d;
+      color:white;
+      font-weight:700;
+      cursor:pointer;
+    }
+    button:hover{ filter: brightness(0.95); }
+
+    .small{ font-size: 13px; opacity: .75; }
+
+    /* ✅ Footer fijo abajo (siempre visible) */
+    .footer{
+      position: sticky;
+      bottom: 0;
+      padding-top: 10px;
+
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+
+      /* fondo suave para que se vea bien encima del texto */
+      background: linear-gradient(to top, rgba(255,255,255,0.95), rgba(255,255,255,0.65));
+      backdrop-filter: blur(6px);
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+
+    /* Portada centrada */
+    .cover{
+      min-height: 260px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      font-weight: 900;
+      font-size: 38px;
+      animation: fadeInUp 800ms ease both, heartbeat 2200ms ease-in-out 800ms infinite;
+    }
+
+    /* Cierre promesa centrado + animación */
+    .finalWrap{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding: 10px 6px;
+    }
+    .finalBox{
+      max-width: 640px;
+      font-size: 18px;
+      line-height: 1.6;
+      animation: fadeInUp 900ms ease both, heartbeat 2200ms ease-in-out 900ms infinite;
+    }
+    .finalTitle{
+      font-weight: 900;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    @keyframes fadeInUp{
+      from{ opacity: 0; transform: translateY(10px); }
+      to{ opacity: 1; transform: translateY(0); }
+    }
+    @keyframes heartbeat{
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.015); }
+    }
+
+    /* Botón música */
+    #musicBtn{
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 16px;
+      border-radius: 50px;
+      border: none;
+      background: #ff4d6d;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 3;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="hearts"></canvas>
+
+  <div class="card">
+    <h1 id="title">Para vos mi niña hermosa ❤️</h1>
+    <p class="sub" id="dateLine"></p>
+
+    <div class="letter" id="letter"></div>
+
+    <div class="footer">
+      <button id="btn">Empezar ✨</button>
+      <span class="small" id="counter"></span>
+    </div>
+  </div>
+
+  <audio id="music" preload="auto">
+    <source src="./cancion.mp3" type="audio/mpeg">
+  </audio>
+  <button id="musicBtn">🎵 Nuestra canción</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
